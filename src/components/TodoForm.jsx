@@ -5,13 +5,15 @@ import { useState } from 'react'
 const TodoForm = ({addTodo}) => {
     const[value, setValue] = useState("") //definindo variaveis de estado inicais como vazias
     const[category, setCategory] = useState("")
+    const [description, setDescription] = useState("")
 
     const handleSubmit = (ev) =>{ //capturando evento
         ev.preventDefault();//previnindo comportamento evento padrao do browser de recarregar a pagina ao enviar o formulario
-        if(!value||!category) return //validando se value e categoria da lista existem senao, retorna nada
-        addTodo(value,category);//chamada a funçao para enviar as informaçoes preenchidas
+        if(!value||!category||!description) return //validando se value e categoria da lista existem senao, retorna nada
+        addTodo(value,category,description);//chamada a funçao para enviar as informaçoes preenchidas
         setValue ("");//limpando o campo apos envio
         setCategory("");//limpando o campo apos envio
+        setDescription("")
         console.log(value,category)
     }
 
@@ -25,6 +27,11 @@ const TodoForm = ({addTodo}) => {
             value={value} /* mantendo o valor do campo atualizado com estado*/
             onChange={(ev)=>setValue(ev.target.value)}/>
             {/* capturando evento e passando valor como categoria e onChange setando categoria como o valor slecionado, atualizando o estado category ao selecionar */}
+            <textarea type ="text"
+            placeholder='Digite a descrição da tarefa (max 200 caracteres)'
+            value={description}
+            onChange={(ev)=> setDescription(ev.target.value)} maxLength={200}/>
+            
             <select value={category} onChange={(ev)=>setCategory(ev.target.value)}>
                 <option value="">Selecione uma categoria</option>
                 <option value="Trabalho">Trabalho</option>
@@ -32,6 +39,7 @@ const TodoForm = ({addTodo}) => {
                 <option value="Estudos">Estudos</option>
 
             </select>
+
             <button type='submit'>Criar tarefa</button>{/*executando o submit de enviar tarefas disparando handleSubmit */}
         </form>
     </div>

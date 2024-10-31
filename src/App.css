@@ -2,7 +2,7 @@ body{
     font-family: Arial;
     background-color: #f4f4f4;
     padding: 30px;
-    color: #333;
+    color: #080808;
     background-image: linear-gradient(#440f50,#561C59ff,#682862ff,#7B356Bff,#8D4274ff);
     background-attachment: fixed;
 }
@@ -10,9 +10,10 @@ body{
 .app{
     max-width: 600px;
     margin: 0 auto 300px ;
-    background-color: #efefefc9;
+    background-color: #a5a3a385;
     padding: 20px 30px;
-    border-radius: 10px;
+    border-radius: 20px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.397)
 }
 h1{
     text-align: center;
@@ -26,28 +27,47 @@ p{
 
 input{
     box-sizing: border-box;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3)
+}
+textarea{
+    box-sizing: border-box;
+    border-bottom: 1px solid #555;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    min-width: 100%;
+    max-width: 100%;
+    font-family: Arial;
+    min-height: 65px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    resize: none;
 }
 
 button{
-    background-color: #333974;
-    color: #FFF;
+    background-color: #537cec;
+    color: #000000;
     padding: 5px 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     opacity: 0.8;
     transition: 0.1s;
     border: none;
     margin-right: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3)
 
 }
 
 button:hover{
+    background-color: #3c9c93;
     opacity: 1;
 
 }
 
 .todo-form{
     padding-bottom: 1.5rem;
+
 }
 
 
@@ -66,31 +86,33 @@ button:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3)
 }
 
 input,select{
     padding: 5px;
     margin-bottom: 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     border: 1px solid #ddd;
     width: 100%;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3)
 
 }
 .complete {
-    background-color: #5cb85c;
+    background-color: #34A0A4;
 
 }
 
 .complete:hover {
-    background-color: #5cb85c;
+    background-color: #22ced4;
     padding: 7px 12px;
 }
 .remove{
-    background-color: #d9534f;
+    background-color: #B5179E;
 }
 
 .remove:hover{
-    background-color: #d9534f;
+    background-color: #b81aa0;
     padding: 7px 12px;
 }
 
@@ -107,5 +129,5 @@ input,select{
 }
 
 .filter-options div{
-    flex: 1 1 0;
+    flex: 1 1 1;
 }
